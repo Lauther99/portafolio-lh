@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { Code2 } from "lucide-react";
+import { TransitionLink } from "@/components/ui/transition-link";
 import { useEffect, useState } from "react";
 
 export function Navbar() {
@@ -22,23 +22,23 @@ export function Navbar() {
       }`}
     >
       {/* Left: logo mark + name */}
-      <Link href="/" className="flex items-center gap-3">
+      <TransitionLink href="/" className="flex items-center gap-3">
         <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand">
           <Code2 size={18} className="text-white" />
         </div>
         <span className="text-white font-semibold text-sm tracking-widest">
           LV
         </span>
-      </Link>
+      </TransitionLink>
 
       {/* Right: CTA */}
       <div className="flex items-center gap-6">
-        <Link
+        <TransitionLink
           href="/contacto"
           className="bg-brand text-white rounded-full px-6 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
         >
           Hire Me
-        </Link>
+        </TransitionLink>
       </div>
     </nav>
   );

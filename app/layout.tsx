@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { SideNav } from "@/components/layout/side-nav";
 import { SocialLinks } from "@/components/layout/social-links";
 import { ScrollIndicator } from "@/components/layout/scroll-indicator";
+import { TransitionProvider } from "@/context/transition-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,16 +49,18 @@ export default function RootLayout({
           />
         </div>
 
-        {/* Layout chrome - above background */}
-        <Navbar />
-        <SideNav />
-        <SocialLinks />
-        <ScrollIndicator />
+        <TransitionProvider>
+          {/* Layout chrome - above background */}
+          <Navbar />
+          <SideNav />
+          <SocialLinks />
+          <ScrollIndicator />
 
-        {/* Page content */}
-        <div className="relative z-10">
-          {children}
-        </div>
+          {/* Page content */}
+          <div className="relative z-10">
+            {children}
+          </div>
+        </TransitionProvider>
       </body>
     </html>
   );

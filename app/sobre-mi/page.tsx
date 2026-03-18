@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { TransitionLink } from "@/components/ui/transition-link";
 
 export default function SobreMi() {
   return (
@@ -35,18 +37,18 @@ export default function SobreMi() {
 
       {/* CTAs */}
       <div className="flex flex-col sm:flex-row gap-4">
-        <Link
+        <TransitionLink
           href="/proyectos"
           className="flex items-center justify-center gap-2 w-fit px-8 py-4 bg-brand text-white rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity"
         >
           See Projects →
-        </Link>
-        <Link
+        </TransitionLink>
+        <TransitionLink
           href="/contacto"
           className="flex items-center justify-center gap-2 w-fit px-8 py-4 border border-white/20 text-white rounded-xl font-semibold text-sm hover:bg-white/5 transition-colors"
         >
           My Stack
-        </Link>
+        </TransitionLink>
       </div>
     </main>
   );

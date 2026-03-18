@@ -1,9 +1,9 @@
 'use client';
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { sections } from "@/lib/sections";
 import { cn } from "@/lib/utils";
+import { TransitionLink } from "@/components/ui/transition-link";
 
 export function SideNav() {
   const pathname = usePathname();
@@ -13,17 +13,18 @@ export function SideNav() {
       {sections.map((section) => {
         const isActive = pathname === section.href;
         return (
-          <Link
+          <TransitionLink
             key={section.href}
             href={section.href}
-            title={section.label}
             className={cn(
               "rounded-full transition-all duration-300",
               isActive
                 ? "w-2.5 h-2.5 bg-brand"
                 : "w-1.5 h-1.5 bg-white/25 hover:bg-white/50"
             )}
-          />
+          >
+            <span className="sr-only">{section.label}</span>
+          </TransitionLink>
         );
       })}
     </div>

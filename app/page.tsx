@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { TransitionLink } from "@/components/ui/transition-link";
 
 export default function Home() {
   return (
@@ -30,12 +32,12 @@ export default function Home() {
 
       {/* CTAs */}
       <div className="mt-10 flex flex-col sm:flex-row gap-4">
-        <Link
+        <TransitionLink
           href="/proyectos"
           className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-black rounded-xl font-semibold text-sm hover:bg-white/90 transition-colors"
         >
           Explore Work →
-        </Link>
+        </TransitionLink>
       </div>
     </main>
   );
