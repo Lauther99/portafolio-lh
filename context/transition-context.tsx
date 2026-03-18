@@ -16,6 +16,7 @@ const TransitionContext = createContext<TransitionContextType>({
 
 export function TransitionProvider({ children }: { children: React.ReactNode }) {
   const [screenshot, setScreenshot] = useState<string | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const router = useRouter();
   const pendingHref = useRef<string | null>(null);
   const busy = useRef(false);
@@ -23,27 +24,26 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
   const navigate = async (href: string) => {
     if (busy.current) return;
     busy.current = true;
+    setIsTransitioning(true);
     pendingHref.current = href;
 
-    // 1. Show Three.js canvas INSTANTLY via direct DOM (no React cycle delay)
-    const el = document.getElementById("transition-canvas") as HTMLCanvasElement | null;
-    if (el) el.style.display = "block";
-
-    // 2. Wait 2 frames — canvas paints solid background, hiding any DOM artifacts
-    await new Promise<void>((r) => requestAnimationFrame(() => { requestAnimationFrame(() => r()); }));
-
-    // 3. Capture page behind the opaque canvas
+    // 1. Capture while page is still visible (no black screen)
+    let dataUrl = "";
     try {
       const domtoimage = (await import("dom-to-image-more")).default;
-      const dataUrl = await domtoimage.toJpeg(document.body, {
-        quality: 0.95,
-        scale: 1,
+      dataUrl = await domtoimage.toJpeg(document.body, {
+        quality: 0.8,
+        scale: 0.8,
         filter: (node: Node) => (node as Element).tagName !== "CANVAS",
       });
-      setScreenshot(dataUrl);
     } catch {
-      setScreenshot(""); // empty string = ready but no texture
+      dataUrl = "";
     }
+
+    // 2. Show canvas with texture already ready — no black period
+    const el = document.getElementById("transition-canvas") as HTMLCanvasElement | null;
+    if (el) el.style.display = "block";
+    setScreenshot(dataUrl);
   };
 
   const onCoverComplete = () => {
@@ -56,10 +56,11 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
   const onRevealComplete = () => {
     setScreenshot(null);
     busy.current = false;
+    setIsTransitioning(false);
   };
 
   return (
-    <TransitionContext.Provider value={{ isTransitioning: busy.current, navigate }}>
+    <TransitionContext.Provider value={{ isTransitioning, navigate }}>
       {children}
       <PageTransitionOverlay
         screenshot={screenshot}
