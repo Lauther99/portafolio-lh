@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { ArrowRight, Plus } from "lucide-react";
 import { proyectos } from "@/lib/proyectos";
@@ -84,11 +83,10 @@ export default function Proyectos() {
                 <div className="flex gap-8 pb-6 pl-12 sm:flex-row flex-col">
                   {/* Image */}
                   <div className="relative w-52 h-32 rounded-xl border border-white/10 overflow-hidden flex-shrink-0 bg-white/5">
-                    <Image
+                    <img
                       src={proyecto.imagen}
                       alt={proyecto.nombre}
-                      fill
-                      className="object-cover object-top opacity-90"
+                      className="object-cover object-top opacity-90 w-full h-full"
                     />
                   </div>
 
