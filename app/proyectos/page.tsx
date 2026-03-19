@@ -78,7 +78,7 @@ export default function Proyectos() {
               {/* Expandable content */}
               <div
                 className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  isOpen ? "max-h-72" : "max-h-0"
+                  isOpen ? "max-h-120" : "max-h-0"
                 }`}
               >
                 <div className="flex gap-8 pb-6 pl-12 sm:flex-row flex-col">

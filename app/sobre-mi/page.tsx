@@ -4,7 +4,7 @@ import { TransitionLink } from "@/components/ui/transition-link";
 
 export default function SobreMi() {
   return (
-    <main className="h-screen flex items-center px-16 md:px-24 lg:px-32 pt-20 pb-16 max-w-[1400px] m-auto">
+    <main className="min-h-screen flex items-center px-6 sm:px-16 md:px-24 lg:px-32 pt-28 md:pt-20 pb-16 max-w-[1400px] m-auto">
       <div className="flex flex-col md:flex-row gap-16 lg:gap-24 w-full items-center">
 
         {/* LEFT — headline + CTAs */}
