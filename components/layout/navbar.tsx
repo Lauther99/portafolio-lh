@@ -32,12 +32,18 @@ export function Navbar() {
       </TransitionLink>
 
       {/* Right: CTA */}
-      <div className="flex items-center gap-6">
+      <div className="hidden sm:flex items-center gap-6">
         <TransitionLink
           href="/contacto"
           className="bg-brand text-white rounded-full px-6 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
         >
-          Hire Me
+          Contáctame
+        </TransitionLink>
+        <TransitionLink
+          href="/contacto"
+          className="bg-brand text-white rounded-full px-6 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
+        >
+          Mis trabajos
         </TransitionLink>
       </div>
     </nav>

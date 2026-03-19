@@ -9,6 +9,7 @@ export type Proyecto = {
   demo: string;
   source: string;
   imagen: string;
+  video: string;
   year: string;
   stats: { value: string; label: string }[];
   features: { title: string; description: string }[];
@@ -16,137 +17,165 @@ export type Proyecto = {
 
 export const proyectos: Proyecto[] = [
   {
-    slug: "nexus-shop",
-    category: "E-Commerce Platform",
-    titleLine1: "Nexus",
-    titleLine2: "Shop.",
-    nombre: "Nexus Shop",
+    slug: "mia-measurement-intelligence-agent",
+    category: "AI System",
+    titleLine1: "MIA",
+    titleLine2: "Agent",
+    nombre: "MIA Agent",
     descripcion:
-      "A high-performance full-stack e-commerce solution featuring real-time inventory management and a seamless user experience. Built to handle thousands of concurrent users with sub-100ms response times.",
-    tags: ["react", "nodejs", "mongodb"],
-    demo: "#",
-    source: "#",
-    imagen: "/proyectos/nexus-shop.png",
-    year: "2024",
+      "Asistente inteligente basado en LLM diseñado para interactuar con sistemas industriales de medición. Permite consultar datos técnicos, ejecutar herramientas especializadas y analizar información del sistema MMS utilizando lenguaje natural.",
+    tags: ["nextjs", "python", "openai", "groq", "azure"],
+    demo: "https://mia-mms.vercel.app/",
+    source: "",
+    imagen: "/media/img/mia_img.webp",
+    video: "/media/vid/mia.webm",
+    year: "2025",
     stats: [
-      { value: "99%", label: "Uptime" },
-      { value: "80ms", label: "Avg. Response" },
+      { value: "95%", label: "Reducción de alucinaciones" },
+      { value: "10+", label: "Tools especializadas" },
     ],
     features: [
-      { title: "Real-time Inventory", description: "Live stock updates powered by WebSockets." },
-      { title: "Smart Search", description: "Fuzzy search with filters and instant results." },
+      {
+        title: "Arquitectura de agentes",
+        description:
+          "Sistema construido con prompt chaining, planificación de tareas y subagentes para resolver consultas complejas.",
+      },
+      {
+        title: "Integración con sistemas industriales",
+        description:
+          "Herramientas personalizadas para consultas técnicas, cálculo de incertidumbre y gestión de activos.",
+      },
     ],
   },
+
   {
-    slug: "flow-finance",
-    category: "Mobile Application",
-    titleLine1: "Flow",
-    titleLine2: "Finance.",
-    nombre: "Flow Finance",
+    slug: "asistencias-app",
+    category: "Web Application",
+    titleLine1: "Asistencias",
+    titleLine2: "App",
+    nombre: "Donde el Che - Attendance",
     descripcion:
-      "A secure mobile banking application with automated budgeting and expenditure forecasting using machine learning. Helps users understand their spending patterns and plan ahead with confidence.",
-    tags: ["flutter", "firebase", "cloudfunctions"],
-    demo: "#",
-    source: "#",
-    imagen: "/proyectos/flow-finance.png",
-    year: "2024",
+      "Aplicación web para registrar y gestionar asistencias de trabajadores de un restaurante. Permite registrar entradas, visualizar historial y administrar colaboradores desde un panel simple.",
+    tags: ["react", "javascript", "netlify", "googleapi"],
+    demo: "",
+    source: "https://github.com/Lauther99/asistencia-elche",
+    imagen: "/media/img/asistencias_img.webp",
+    video: "/media/vid/asistencias.webm",
+    year: "2025",
     stats: [
-      { value: "98%", label: "User Satisfaction" },
-      { value: "10ms", label: "Query Latency" },
+      { value: "8", label: "Colaboradores activos" },
+      { value: "1", label: "Panel administrativo" },
     ],
     features: [
-      { title: "Real-time Sync", description: "Supabase real-time database powering live updates." },
-      { title: "Smart Analytics", description: "Interactive charts for comprehensive progress tracking." },
+      {
+        title: "Registro digital",
+        description:
+          "Sistema sencillo para registrar asistencia de trabajadores desde una interfaz web.",
+      },
+      {
+        title: "Panel de administración",
+        description:
+          "Permite visualizar y gestionar registros de asistencia de los colaboradores.",
+      },
     ],
   },
+
   {
-    slug: "genie-ai",
-    category: "SaaS Platform",
-    titleLine1: "Genie",
-    titleLine2: "AI.",
-    nombre: "GenieAI",
+    slug: "auto-boutique-web",
+    category: "E-Commerce Website",
+    titleLine1: "Auto",
+    titleLine2: "Boutique",
+    nombre: "AutoShop Web",
     descripcion:
-      "An advanced SaaS platform for automated content creation utilizing large language models. Generates SEO-optimized, high-converting copy at scale — reducing content creation time by over 70%.",
-    tags: ["nextjs", "openai", "tailwind"],
-    demo: "#",
-    source: "#",
-    imagen: "/proyectos/genie-ai.png",
-    year: "2023",
+      "Landing page moderna para mostrar productos de autopartes. Incluye catálogo, buscador optimizado con índices de base de datos, carrito de compras y sistema de favoritos.",
+    tags: ["nextjs", "react", "tailwind", "supabase", "vercel"],
+    demo: "https://autoshop-autobotique.vercel.app/",
+    source: "https://github.com/Lauther99/autoshop-autobotique",
+    imagen: "/media/img/autoshop_img.webp",
+    video: "/media/vid/autoshop.webm",
+    year: "2026",
     stats: [
-      { value: "70%", label: "Time Saved" },
-      { value: "10k+", label: "Texts Generated" },
+      { value: "100%", label: "Diseño responsive" },
+      { value: "2", label: "Modos de tema (claro/oscuro)" },
     ],
     features: [
-      { title: "AI Prompting", description: "Custom prompt templates for every content type." },
-      { title: "SEO Scoring", description: "Built-in readability and keyword density analysis." },
+      {
+        title: "Catálogo de productos",
+        description:
+          "Listado dinámico de autopartes con buscador optimizado usando índices de base de datos.",
+      },
+      {
+        title: "Carrito y favoritos",
+        description:
+          "Permite guardar productos y preparar pedidos para contacto directo con el negocio.",
+      },
     ],
   },
+
   {
-    slug: "genie-ai3",
-    category: "SaaS Platform",
-    titleLine1: "Genie",
-    titleLine2: "AI.",
-    nombre: "GenieAI",
+    slug: "troyani-industrial-web",
+    category: "Corporate Website",
+    titleLine1: "Troyani",
+    titleLine2: "Tanks",
+    nombre: "Troyani Web",
     descripcion:
-      "An advanced SaaS platform for automated content creation utilizing large language models. Generates SEO-optimized, high-converting copy at scale — reducing content creation time by over 70%.",
-    tags: ["nextjs", "openai", "tailwind"],
-    demo: "#",
-    source: "#",
-    imagen: "/proyectos/genie-ai.png",
-    year: "2023",
+      "Sitio web corporativo diseñado para transmitir la experiencia visual de los productos industriales. Implementa storytelling basado en scroll con animaciones y efectos interactivos.",
+    tags: ["nextjs", "react", "tailwind", "vercel"],
+    demo: "https://troyani-web.vercel.app/",
+    source: "https://github.com/Lauther99/troyani-web",
+    imagen: "/media/img/troyani_img.webp",
+    video: "/media/vid/troyani.webm",
+    year: "2026",
     stats: [
-      { value: "70%", label: "Time Saved" },
-      { value: "10k+", label: "Texts Generated" },
+      { value: "1", label: "Experiencia Scroll Storytelling" },
+      { value: "100%", label: "Diseño responsive" },
     ],
     features: [
-      { title: "AI Prompting", description: "Custom prompt templates for every content type." },
-      { title: "SEO Scoring", description: "Built-in readability and keyword density analysis." },
+      {
+        title: "Scroll storytelling",
+        description:
+          "Animaciones y transiciones visuales que presentan los productos a medida que el usuario navega.",
+      },
+      {
+        title: "Experiencia visual",
+        description:
+          "Diseño enfocado en transmitir la escala y calidad de los tanques industriales.",
+      },
     ],
   },
+
   {
-    slug: "genie-ai2",
-    category: "SaaS Platform",
-    titleLine1: "Genie",
-    titleLine2: "AI.",
-    nombre: "GenieAI",
+    slug: "enzo-agent",
+    category: "AI Assistant",
+    titleLine1: "LLM",
+    titleLine2: "Agent",
+    nombre: "Enzo - Agente LLM",
     descripcion:
-      "An advanced SaaS platform for automated content creation utilizing large language models. Generates SEO-optimized, high-converting copy at scale — reducing content creation time by over 70%.",
-    tags: ["nextjs", "openai", "tailwind"],
-    demo: "#",
-    source: "#",
-    imagen: "/proyectos/genie-ai.png",
-    year: "2023",
+      "Agente inteligente diseñado para automatizar tareas diarias como programar correos, registrar contactos y agendar reuniones mediante integración con APIs externas.",
+    tags: ["python", "openai", "firebase", "googleapi", "whatsapp"],
+    demo: "",
+    source: "https://github.com/Lauther99/enzo_agent",
+    imagen: "/media/img/enzo_img.webp",
+    video: "/media/vid/enzo.webm",
+    year: "2025",
     stats: [
-      { value: "70%", label: "Time Saved" },
-      { value: "10k+", label: "Texts Generated" },
+      { value: "95%", label: "Precisión en respuestas" },
+      { value: "5+", label: "Integraciones API" },
     ],
     features: [
-      { title: "AI Prompting", description: "Custom prompt templates for every content type." },
-      { title: "SEO Scoring", description: "Built-in readability and keyword density analysis." },
+      {
+        title: "Automatización de tareas",
+        description:
+          "Permite ejecutar acciones como enviar correos, crear eventos y registrar información automáticamente.",
+      },
+      {
+        title: "Integración con APIs",
+        description:
+          "Conexión con servicios externos como Google APIs y WhatsApp para ampliar las capacidades del agente.",
+      },
     ],
   },
-  {
-    slug: "genie-ai1",
-    category: "SaaS Platform",
-    titleLine1: "Genie",
-    titleLine2: "AI.",
-    nombre: "GenieAI",
-    descripcion:
-      "An advanced SaaS platform for automated content creation utilizing large language models. Generates SEO-optimized, high-converting copy at scale — reducing content creation time by over 70%.",
-    tags: ["nextjs", "openai", "tailwind"],
-    demo: "#",
-    source: "#",
-    imagen: "/proyectos/genie-ai.png",
-    year: "2023",
-    stats: [
-      { value: "70%", label: "Time Saved" },
-      { value: "10k+", label: "Texts Generated" },
-    ],
-    features: [
-      { title: "AI Prompting", description: "Custom prompt templates for every content type." },
-      { title: "SEO Scoring", description: "Built-in readability and keyword density analysis." },
-    ],
-  },
+
 ];
 
 export function getProyectoBySlug(slug: string): Proyecto | undefined {

@@ -29,7 +29,7 @@ export function ArcNav() {
       onMouseLeave={() => setOpen(false)}
     >
       {/* Container — tall enough to keep hover active while mouse moves to arc items */}
-      <div className="relative" style={{ width: 320, height: 210 }}>
+      <div className="relative" style={{ width: open ? 320 : 130, height: open ? 120 : 65 }}>
         {/* Radial dark backdrop */}
         <AnimatePresence>
           {open && (

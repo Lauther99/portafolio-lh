@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "motion/react";
 import {
   ArrowLeft,
@@ -43,19 +42,16 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="mx-4 rounded-3xl overflow-hidden border border-white/10 bg-white/5 flex-shrink-0"
         >
-          <div className="relative aspect-[9/14]">
-            <Image
-              src={proyecto.imagen}
-              alt={proyecto.titleLine1}
-              fill
-              className="object-cover object-top"
+          <div className="relative aspect-[9/16]">
+            <video
+              src={proyecto.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-
-            {/* HD badge */}
-            <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-white text-[10px] font-semibold px-2.5 py-1 rounded-full border border-white/20">
-              HD 4K
-            </div>
 
             {/* Play button */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -72,7 +68,9 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-white/70 text-[11px] font-mono">0:37 / 2:23</span>
+                <span className="text-white/70 text-[11px] font-mono">
+                  0:37 / 2:23
+                </span>
                 <div className="flex gap-3">
                   <Volume2 size={16} className="text-white/60" />
                   <Maximize2 size={16} className="text-white/60" />
@@ -97,8 +95,12 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
           </div>
 
           <h1 className="font-black leading-[0.95] cursor-default">
-            <span className="block text-white text-5xl">{proyecto.titleLine1}</span>
-            <span className="block text-brand italic text-5xl">{proyecto.titleLine2}</span>
+            <span className="block text-white text-5xl">
+              {proyecto.titleLine1}
+            </span>
+            <span className="block text-brand italic text-5xl">
+              {proyecto.titleLine2}
+            </span>
           </h1>
 
           <p className="text-muted-foreground text-sm leading-relaxed">
@@ -142,7 +144,9 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
           <div className="flex gap-10 pb-4">
             {proyecto.stats.map((stat) => (
               <div key={stat.label}>
-                <span className="block text-brand font-black text-3xl">{stat.value}</span>
+                <span className="block text-brand font-black text-3xl">
+                  {stat.value}
+                </span>
                 <span className="text-white/40 text-[10px] tracking-widest uppercase font-medium">
                   {stat.label}
                 </span>
@@ -161,7 +165,7 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
       </main>
 
       {/* ── DESKTOP layout ── */}
-      <main className="hidden md:flex h-screen flex-col pt-20 pb-8 overflow-hidden px-16 lg:px-24 max-w-[1400px] m-auto">
+      <main className="hidden md:flex h-screen flex-col pt-20 pb-8 overflow-hidden px-16 lg:px-24 m-auto w-full max-w-[1400px]">
         <div className="mb-8 flex-shrink-0">
           <Link
             href="/proyectos"
@@ -172,7 +176,7 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
           </Link>
         </div>
 
-        <div className="flex-1 flex gap-16 items-center min-h-0">
+        <div className="flex-1 flex gap-16 items-center justify-center min-h-0 w-full">
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -233,8 +237,6 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
                 </a>
               )}
             </div>
-
-            
           </motion.div>
 
           {/* RIGHT */}
@@ -242,21 +244,24 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
             initial={{ scale: 0.94, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="flex-1 relative flex items-center justify-center min-h-0 h-full pb-10"
+            className="flex-shrink-0 flex items-center justify-center h-full py-10"
           >
-            <div className="relative w-full h-full max-w-lg ">
+            {/* Video + floating card anclados juntos */}
+            <div className="relative h-full aspect-[9/16] max-w-xs">
               <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/10 bg-white/5">
-                <Image
-                  src={proyecto.imagen}
-                  alt={proyecto.titleLine1}
-                  fill
-                  className="object-cover object-top"
+                <video
+                  src={proyecto.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-l from-background/60 via-transparent to-transparent" />
               </div>
 
-              {/* Floating card top-right */}
-              <div className="absolute -top-4 -right-4 bg-background/90 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-3 max-w-[200px] shadow-xl">
+              {/* Floating card — anclada al video */}
+              <div className="absolute -top-3 -right-3 bg-background/90 backdrop-blur-md border border-white/15 rounded-2xl px-4 py-3 max-w-[190px] shadow-xl translate-x-1/4">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
                     <div className="w-2 h-2 rounded-full bg-green-400" />
@@ -269,7 +274,6 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
                   {proyecto.features[0].description}
                 </p>
               </div>
-
             </div>
           </motion.div>
         </div>

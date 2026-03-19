@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { ArrowUpRight, ArrowRight, Plus } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import { proyectos } from "@/lib/proyectos";
 import { TechPill } from "@/components/ui/tech-pill";
 
@@ -14,8 +14,8 @@ export default function Proyectos() {
     <main className="h-screen flex flex-col pt-24 pb-[70px] overflow-hidden md:px-24 max-w-[1400px] m-auto px-5">
       {/* Header */}
       <div className="mb-6 flex-shrink-0">
-        <h1 className="font-black text-[clamp(2.5rem,5vw,5rem)] text-white leading-tight">
-          Featured Projects
+        <h1 className="font-black uppercase text-[clamp(2rem,4vw,4rem)] text-white leading-tight">
+          Proyectos
         </h1>
       </div>
 
@@ -81,7 +81,7 @@ export default function Proyectos() {
                   isOpen ? "max-h-72" : "max-h-0"
                 }`}
               >
-                <div className="flex gap-8 pb-6">
+                <div className="flex gap-8 pb-6 pl-12 sm:flex-row flex-col">
                   {/* Image */}
                   <div className="relative w-52 h-32 rounded-xl border border-white/10 overflow-hidden flex-shrink-0 bg-white/5">
                     <Image
@@ -112,10 +112,10 @@ export default function Proyectos() {
                         href={`/proyectos/${proyecto.slug}`}
                         className="flex items-center gap-1.5 text-brand text-sm font-semibold hover:gap-2.5 transition-all duration-200"
                       >
-                        View Case Study
+                        Ver más
                         <ArrowRight size={14} />
                       </Link>
-                      <a
+                      {/* <a
                         href={proyecto.demo}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -123,7 +123,7 @@ export default function Proyectos() {
                       >
                         Live Demo
                         <ArrowUpRight size={14} />
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </div>
