@@ -128,7 +128,7 @@ export function ArcNav() {
             height: 65,
             borderRadius: "65px 65px 0 0",
             background: open ? "rgba(0,0,0,0.75)" : "rgba(0,0,0,0.5)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            border: "1px solid var(--brand)",
             borderBottom: "none",
           }}
         >

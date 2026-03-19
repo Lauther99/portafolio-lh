@@ -1,8 +1,11 @@
 "use client";
 
+import { NavHint } from "@/components/layout/nav-hint";
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 pt-20 pb-24 md:pt-0 md:pb-0">
+      <NavHint />
       {/* Available badge */}
       <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-6 md:mb-8">
         <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
