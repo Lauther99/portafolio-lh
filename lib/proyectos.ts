@@ -49,11 +49,11 @@ export const proyectos: Proyecto[] = [
   },
 
   {
-    slug: "asistencias-app",
+    slug: "dec-asistencias-app",
     category: "Web Application",
-    titleLine1: "Asistencias",
-    titleLine2: "App",
-    nombre: "Donde el Che - Attendance",
+    titleLine1: "Donde el Che",
+    titleLine2: "Asistencias",
+    nombre: "Donde el Che - Asistencias",
     descripcion:
       "Aplicación web para registrar y gestionar asistencias de trabajadores de un restaurante. Permite registrar entradas, visualizar historial y administrar colaboradores desde un panel simple.",
     tags: ["react", "javascript", "netlify", "googleapi"],
@@ -81,10 +81,10 @@ export const proyectos: Proyecto[] = [
   },
 
   {
-    slug: "auto-boutique-web",
+    slug: "autoshop-autoboutique-web",
     category: "E-Commerce Website",
-    titleLine1: "Auto",
-    titleLine2: "Boutique",
+    titleLine1: "AutoShop",
+    titleLine2: "AutoBoutique",
     nombre: "AutoShop Web",
     descripcion:
       "Landing page moderna para mostrar productos de autopartes. Incluye catálogo, buscador optimizado con índices de base de datos, carrito de compras y sistema de favoritos.",
@@ -113,10 +113,10 @@ export const proyectos: Proyecto[] = [
   },
 
   {
-    slug: "troyani-industrial-web",
-    category: "Corporate Website",
+    slug: "troyani-web",
+    category: "Website",
     titleLine1: "Troyani",
-    titleLine2: "Tanks",
+    titleLine2: "Web",
     nombre: "Troyani Web",
     descripcion:
       "Sitio web corporativo diseñado para transmitir la experiencia visual de los productos industriales. Implementa storytelling basado en scroll con animaciones y efectos interactivos.",
@@ -145,10 +145,10 @@ export const proyectos: Proyecto[] = [
   },
 
   {
-    slug: "enzo-agent",
+    slug: "enzo-llm-agent",
     category: "AI Assistant",
-    titleLine1: "LLM",
-    titleLine2: "Agent",
+    titleLine1: "Agente LLM",
+    titleLine2: "Enzo",
     nombre: "Enzo - Agente LLM",
     descripcion:
       "Agente inteligente diseñado para automatizar tareas diarias como programar correos, registrar contactos y agendar reuniones mediante integración con APIs externas.",

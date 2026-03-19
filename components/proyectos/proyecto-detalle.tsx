@@ -2,15 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import {
-  ArrowLeft,
-  ExternalLink,
-  Code,
-  Play,
-  Volume2,
-  Maximize2,
-  Share2,
-} from "lucide-react";
+import { ArrowLeft, ExternalLink, Code } from "lucide-react";
 import type { Proyecto } from "@/lib/proyectos";
 import { TechPill } from "@/components/ui/tech-pill";
 
@@ -20,27 +12,30 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
       {/* ── MOBILE layout ── */}
       <main className="md:hidden flex flex-col min-h-screen pt-16 pb-8 overflow-y-auto">
         {/* Top bar */}
-        <div className="flex items-center justify-between px-5 py-4 flex-shrink-0">
+        {/* <div className="flex items-center justify-between px-5 py-4 flex-shrink-0">
           <Link
             href="/proyectos"
-            className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/60 hover:text-white transition-colors"
+            className="h-10 rounded-full flex items-center justify-center text-white/60 hover:text-white gap-4"
           >
-            <ArrowLeft size={16} />
+            <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/60 hover:text-white transition-color">
+              <ArrowLeft size={16} />
+            </div>
+            Back to Projects
           </Link>
-          <span className="text-white text-xs font-semibold tracking-[0.2em] uppercase">
-            Project Detail
-          </span>
-          <button className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-white/60 hover:text-white transition-colors">
-            <Share2 size={16} />
-          </button>
-        </div>
+          <Link
+            href="/proyectos"
+            className="flex items-center gap-2 text-white/40 hover:text-white text-sm font-medium transition-colors pb-4"
+          >
+            
+          </Link>
+        </div> */}
 
         {/* Video / Media player */}
         <motion.div
           initial={{ scale: 0.92, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-4 rounded-3xl overflow-hidden border border-white/10 bg-white/5 flex-shrink-0"
+          className="mx-4 rounded-3xl overflow-hidden border border-white/10 bg-white/5 flex-shrink-0 mt-10"
         >
           <div className="relative aspect-[9/16]">
             <video
@@ -52,31 +47,6 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-
-            {/* Play button */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-brand flex items-center justify-center shadow-lg shadow-brand/30">
-                <Play size={24} className="text-white fill-white ml-1" />
-              </div>
-            </div>
-
-            {/* Controls */}
-            <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
-              <div className="w-full h-1 bg-white/20 rounded-full mb-3">
-                <div className="w-[27%] h-full bg-brand rounded-full relative">
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow" />
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-white/70 text-[11px] font-mono">
-                  0:37 / 2:23
-                </span>
-                <div className="flex gap-3">
-                  <Volume2 size={16} className="text-white/60" />
-                  <Maximize2 size={16} className="text-white/60" />
-                </div>
-              </div>
-            </div>
           </div>
         </motion.div>
 
@@ -87,7 +57,7 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
           transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="px-5 flex flex-col gap-6"
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 pt-5 sm:pt-0">
             <div className="w-6 h-px bg-brand" />
             <span className="text-brand text-[10px] tracking-widest uppercase font-semibold">
               {proyecto.category}
@@ -95,21 +65,21 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
           </div>
 
           <h1 className="font-black leading-[0.95] cursor-default">
-            <span className="block text-white text-5xl">
+            <span className="block text-white text-3xl">
               {proyecto.titleLine1}
             </span>
-            <span className="block text-brand italic text-5xl">
+            <span className="block text-brand italic text-3xl">
               {proyecto.titleLine2}
             </span>
           </h1>
 
-          <p className="text-muted-foreground text-sm leading-relaxed">
+          <p className="text-muted-foreground text-sm leading-relaxed text-justify">
             {proyecto.descripcion}
           </p>
 
           <div>
             <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase font-semibold block mb-3">
-              Tech Stack
+              Stack
             </span>
             <div className="flex flex-wrap gap-2">
               {proyecto.tags.map((tag) => (
@@ -141,7 +111,7 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
             )}
           </div>
 
-          <div className="flex gap-10 pb-4">
+          <div className="flex gap-10 pb-10">
             {proyecto.stats.map((stat) => (
               <div key={stat.label}>
                 <span className="block text-brand font-black text-3xl">
@@ -153,14 +123,6 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
               </div>
             ))}
           </div>
-
-          <Link
-            href="/proyectos"
-            className="flex items-center gap-2 text-white/40 hover:text-white text-sm font-medium transition-colors pb-4"
-          >
-            <ArrowLeft size={14} />
-            Back to Projects
-          </Link>
         </motion.div>
       </main>
 
@@ -206,7 +168,7 @@ export function ProyectoDetalle({ proyecto }: { proyecto: Proyecto }) {
 
             <div className="mb-8">
               <span className="text-white/40 text-[10px] tracking-[0.2em] uppercase font-semibold block mb-3">
-                Tech Stack
+                Stack
               </span>
               <div className="flex flex-wrap gap-2">
                 {proyecto.tags.map((tag) => (

@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 const ANGLES = [170, 120, 60, 10];
 
 const xy = {
-  170: {x: -120, y: 30},
-  120: {x: -68, y: -30},
-  60: {x: 68, y: -30},
-  10: {x: 120, y: 30},
+  170: {x: -100, y: 30},
+  120: {x: -60, y: -30},
+  60: {x: 60, y: -30},
+  10: {x: 100, y: 30},
 };
 
 export function ArcNav() {
@@ -22,6 +22,11 @@ export function ArcNav() {
   const { navigate, isTransitioning } = useTransition();
 
   const currentSection = sections.find((s) => s.href === pathname);
+
+  const slug = pathname.split("/")[2];
+  const slugLabel = slug
+    ? slug.split("-").map((w) => w[0].toUpperCase()).slice(0, 4).join("")
+    : "";
 
   return (
     <div
@@ -128,7 +133,7 @@ export function ArcNav() {
           }}
         >
           <span className="text-[10px] tracking-[0.25em] uppercase text-white/50">
-            {currentSection?.label}
+            {currentSection?.label ?? slugLabel}
           </span>
         </div>
       </div>
