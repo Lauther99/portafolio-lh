@@ -11,7 +11,7 @@ export default function Proyectos() {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <main className="h-screen flex flex-col pt-24 pb-15 overflow-hidden px-16 md:px-24 max-w-[1400px] m-auto">
+    <main className="h-screen flex flex-col pt-24 pb-[70px] overflow-hidden md:px-24 max-w-[1400px] m-auto px-5">
       {/* Header */}
       <div className="mb-6 flex-shrink-0">
         <h1 className="font-black text-[clamp(2.5rem,5vw,5rem)] text-white leading-tight">
@@ -20,7 +20,7 @@ export default function Proyectos() {
       </div>
 
       {/* Accordion list */}
-      <div className="flex-1 flex flex-col min-h-0 overflow-y-auto scrollbar-thin py-2">
+      <div className="flex-1 flex flex-col min-h-0 overflow-y-auto scrollbar-thin">
         {proyectos.map((proyecto, i) => {
           const isOpen = open === proyecto.slug;
           return (

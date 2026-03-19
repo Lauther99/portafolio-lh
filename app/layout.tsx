@@ -3,9 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars";
 import { Navbar } from "@/components/layout/navbar";
-import { SideNav } from "@/components/layout/side-nav";
-import { SocialLinks } from "@/components/layout/social-links";
-import { ScrollIndicator } from "@/components/layout/scroll-indicator";
+import { ArcNav } from "@/components/layout/arc-nav";
 import { TransitionProvider } from "@/context/transition-context";
 
 const geistSans = Geist({
@@ -20,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lauther Valladares",
-  description: "Portafolio personal de Lauther Valladares - Digital Craftsman",
+  description: "Portafolio personal de Lauther Valladares - Software Developer / AI Developer",
 };
 
 export default function RootLayout({
@@ -52,14 +50,16 @@ export default function RootLayout({
         <TransitionProvider>
           {/* Layout chrome - above background */}
           <Navbar />
-          <SideNav />
-          <SocialLinks />
-          <ScrollIndicator />
 
           {/* Page content */}
-          <div className="relative z-10">
-            {children}
-          </div>
+          <div className="relative z-10">{children}</div>
+
+          <footer
+            className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center justify-between pointer-events-none"
+            style={{ overflow: "visible" }}
+          >
+            <ArcNav />
+          </footer>
         </TransitionProvider>
       </body>
     </html>
