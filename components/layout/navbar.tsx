@@ -40,7 +40,7 @@ export function Navbar() {
           Contáctame
         </TransitionLink>
         <TransitionLink
-          href="/contacto"
+          href="/proyectos"
           className="bg-brand text-white rounded-full px-6 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
         >
           Mis trabajos
