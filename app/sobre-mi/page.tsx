@@ -39,24 +39,27 @@ export default function SobreMi() {
 
         {/* RIGHT — bio */}
         <div className="flex-1 flex flex-col gap-6 max-w-lg">
+          <h3>Hola!<h3/>
           <div className="w-8 h-px bg-brand" />
 
           <p className="text-muted-foreground text-base leading-relaxed cursor-default">
-            Soy desarrollador de software con interés en crear aplicaciones útiles,
-            bien diseñadas y técnicamente sólidas. Mi experiencia combina desarrollo
-            web moderno con la construcción de sistemas inteligentes basados en
-            modelos de lenguaje (LLMs).
+            Me llamo Lauther, soy desarrollador de software, fullstack web developer de Perú.
+            Me gusta mucho temas sobre LLM's, inteligencia artificial, ciberseguridad, desarrollo web.
+            También tengo interés en combinar mis conocimientos con electrónica con proyectos de arduino.
           </p>
 
           <p className="text-muted-foreground text-base leading-relaxed cursor-default">
-            He trabajado con tecnologías como React, Next.js y Node.js, además de
-            construir agentes de IA capaces de interactuar con herramientas, bases
-            de datos y documentación técnica mediante lenguaje natural.
+            Pero en fin, a lo largo de mi carrera te puedo decir que he trabajado con tecnologías como React, Next.js 
+            y Node.js, además de construir agentes de IA capaces de interactuar con herramientas, bases de datos y documentación técnica mediante lenguaje natural.
           </p>
 
           <p className="text-muted-foreground text-base leading-relaxed cursor-default">
-            Disfruto aprender constantemente y desarrollar soluciones que realmente
+            Y como verás disfruto aprender constantemente leer y hacer codigo y sobretodo de aceptar nuevos desafíos para desarrollar aplicaciones que
             puedan ser utilizadas por personas y equipos.
+          </p>
+            
+          <p className="text-muted-foreground text-base leading-relaxed cursor-default">
+            Esta landing fue hecha con cariño, espero que la disfrutes y podamos comunicarnos :D
           </p>
         </div>
 
