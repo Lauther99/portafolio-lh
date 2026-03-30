@@ -39,7 +39,7 @@ export default function SobreMi() {
 
         {/* RIGHT — bio */}
         <div className="flex-1 flex flex-col gap-6 max-w-lg">
-          <h3>Hola!<h3/>
+          <h3 className="text-xl font-semibold">Hola!</h3>
           <div className="w-8 h-px bg-brand" />
 
           <p className="text-muted-foreground text-base leading-relaxed cursor-default">
@@ -54,7 +54,7 @@ export default function SobreMi() {
           </p>
 
           <p className="text-muted-foreground text-base leading-relaxed cursor-default">
-            Y como verás disfruto aprender constantemente leer y hacer codigo y sobretodo de aceptar nuevos desafíos para desarrollar aplicaciones que
+            Y como verás disfruto aprender constantemente leer y escribir código y sobre todo de aceptar nuevos desafíos para desarrollar aplicaciones que
             puedan ser utilizadas por personas y equipos.
           </p>
             
